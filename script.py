@@ -1,7 +1,16 @@
 import pandas as pd
 
-# Excel読み込み
+# ① Excelを読み込む
 df = pd.read_excel("data/data.xlsx")
 
-# 確認表示
-print(df)
+# ② キャスト名を指定
+cast_name = "えま"
+
+# ③ キャストで絞る
+result = df[df["キャスト名"] == cast_name]
+
+# ④ 必要な列だけにする
+result = result[["コース", "金額"]]
+
+# ⑤ 結果を表示
+print(result)
